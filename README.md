@@ -10,3 +10,5 @@ so you don’t have to worry about waiting for your test and webpage to sync.
 
 ##### TractorDriver is tested with Python 3.6 and 3.7 by using pytest. 
 No need to download any webdriver and put it in some path. Tracktor driver and webdrivermanager will automatically do it.
+
+### TODO:  Write a user friendly documentation. 
