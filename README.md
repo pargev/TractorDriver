@@ -5,7 +5,7 @@
 
 [Usage](#Usage)  
 
-[Finding Element(s)](#Finding Element(s))  
+[Finding Elements](#Finding Element(s))  
 [Model](##Model)  
 [Binding](##Binding)  
 [Model](##Model)  
@@ -21,10 +21,7 @@
 [find_all_repeater_rows_by_value](##find_all_repeater_rows_by_value)  
 [find_all_repeater_column](##find_all_repeater_column)  
 [find_element_by_css_containing_text](##find_element_by_css_containing_text)  
-
-
 [Web Element Methods](#Web Element Methods)  
-
 [Click and JS Click, mousedown](##Click and JS Click, mousedown)
 [Wait, Wait status, Wait Visible, Wait Invisible](##Wait, Wait status, Wait Visible, Wait Invisible)
 [is element enabled, or disabled](##is element enabled, or disabled)
