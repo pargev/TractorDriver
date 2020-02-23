@@ -1,9 +1,7 @@
 ##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
+[About](#About)  
+[Installation](#Installation)  
 <a name="headers"/>
-## Headers
 
 
 # About
