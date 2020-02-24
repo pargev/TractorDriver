@@ -785,6 +785,243 @@ class Element(WebElement):
         element = wait.until(EC.presence_of_element_located(self))
         return element
 
+    def run_browser_methods_on_element(self, prop):
+        return self._parent.execute_script(f"return($(arguments[0].{prop}))", self)
+
+    @property
+    def children(self):
+        return self.run_browser_methods_on_element(JsProp.children)
+
+    @property
+    def previous_element_sibling(self):
+        return self.run_browser_methods_on_element(JsProp.previousElementSibling)
+
+    @property
+    def previous_sibling(self):
+        return self.run_browser_methods_on_element(JsProp.previousSibling)
+
+    @property
+    def next_element_sibling(self):
+        return self.run_browser_methods_on_element(JsProp.nextElementSibling)
+
+    @property
+    def next_sibling(self):
+        return self.run_browser_methods_on_element(JsProp.nextSibling)
+
+    @property
+    def parent_element(self):
+        return self.run_browser_methods_on_element(JsProp.parentElement)
+
+    @property
+    def parent_node(self):
+        return self.run_browser_methods_on_element(JsProp.parentNode)
+
+    @property
+    def style(self):
+        return self.run_browser_methods_on_element(JsProp.style)
+
+    @property
+    def child_element_count(self):
+        return self.run_browser_methods_on_element(JsProp.childElementCount)
+
+    @property
+    def class_name(self):
+        return self.run_browser_methods_on_element(JsProp.className)
+
+    @property
+    def class_list(self):
+        return self.run_browser_methods_on_element(JsProp.classList)
+
+    @property
+    def attributes(self):
+        return self.run_browser_methods_on_element(JsProp.attributes)
+
+    @property
+    def innerHTML(self):
+        return self.run_browser_methods_on_element(JsProp.innerHTML)
+
+    @property
+    def outerHTML(self):
+        return self.run_browser_methods_on_element(JsProp.outerHTML)
+
+    @property
+    def first_element_child(self):
+        return self.run_browser_methods_on_element(JsProp.firstElementChild)
+
+    @property
+    def last_element_child(self):
+        return self.run_browser_methods_on_element(JsProp.lastElementChild)
+
+    @property
+    def first_child(self):
+        return self.run_browser_methods_on_element(JsProp.firstChild)
+
+    @property
+    def last_child(self):
+        return self.run_browser_methods_on_element(JsProp.lastChild)
+
+
+class JsProp(object):
+    align = "align"
+    title = "title"
+    lang = "lang"
+    translate = "translate"
+    dir = "dir"
+    hidden = "hidden"
+    accessKey = "accessKey"
+    draggable = "draggable"
+    spellcheck = "spellcheck"
+    autocapitalize = "autocapitalize"
+    contentEditable = "contentEditable"
+    isContentEditable = "isContentEditable"
+    inputMode = "inputMode"
+    offsetParent = "offsetParent"
+    offsetTop = "offsetTop"
+    offsetLeft = "offsetLeft"
+    offsetWidth = "offsetWidth"
+    offsetHeight = "offsetHeight"
+    style = "style"
+    innerText = "innerText"
+    outerText = "outerText"
+    oncopy = "oncopy"
+    oncut = "oncut"
+    onpaste = "onpaste"
+    onabort = "onabort"
+    onblur = "onblur"
+    oncancel = "oncancel"
+    oncanplay = "oncanplay"
+    oncanplaythrough = "oncanplaythrough"
+    onchange = "onchange"
+    onclick = "onclick"
+    onclose = "onclose"
+    oncontextmenu = "oncontextmenu"
+    oncuechange = "oncuechange"
+    ondblclick = "ondblclick"
+    ondrag = "ondrag"
+    ondragend = "ondragend"
+    ondragenter = "ondragenter"
+    ondragleave = "ondragleave"
+    ondragover = "ondragover"
+    ondragstart = "ondragstart"
+    ondrop = "ondrop"
+    ondurationchange = "ondurationchange"
+    onemptied = "onemptied"
+    onended = "onended"
+    onerror = "onerror"
+    onfocus = "onfocus"
+    oninput = "oninput"
+    oninvalid = "oninvalid"
+    onkeydown = "onkeydown"
+    onkeypress = "onkeypress"
+    onkeyup = "onkeyup"
+    onload = "onload"
+    onloadeddata = "onloadeddata"
+    onloadedmetadata = "onloadedmetadata"
+    onloadstart = "onloadstart"
+    onmousedown = "onmousedown"
+    onmouseenter = "onmouseenter"
+    onmouseleave = "onmouseleave"
+    onmousemove = "onmousemove"
+    onmouseout = "onmouseout"
+    onmouseover = "onmouseover"
+    onmouseup = "onmouseup"
+    onmousewheel = "onmousewheel"
+    onpause = "onpause"
+    onplay = "onplay"
+    onplaying = "onplaying"
+    onprogress = "onprogress"
+    onratechange = "onratechange"
+    onreset = "onreset"
+    onresize = "onresize"
+    onscroll = "onscroll"
+    onseeked = "onseeked"
+    onseeking = "onseeking"
+    onselect = "onselect"
+    onstalled = "onstalled"
+    onsubmit = "onsubmit"
+    onsuspend = "onsuspend"
+    ontimeupdate = "ontimeupdate"
+    ontoggle = "ontoggle"
+    onvolumechange = "onvolumechange"
+    onwaiting = "onwaiting"
+    onwheel = "onwheel"
+    onauxclick = "onauxclick"
+    ongotpointercapture = "ongotpointercapture"
+    onlostpointercapture = "onlostpointercapture"
+    onpointerdown = "onpointerdown"
+    onpointermove = "onpointermove"
+    onpointerup = "onpointerup"
+    onpointercancel = "onpointercancel"
+    onpointerover = "onpointerover"
+    onpointerout = "onpointerout"
+    onpointerenter = "onpointerenter"
+    onpointerleave = "onpointerleave"
+    onselectstart = "onselectstart"
+    onselectionchange = "onselectionchange"
+    onanimationend = "onanimationend"
+    onanimationiteration = "onanimationiteration"
+    onanimationstart = "onanimationstart"
+    ontransitionend = "ontransitionend"
+    dataset = "dataset"
+    nonce = "nonce"
+    autofocus = "autofocus"
+    tabIndex = "tabIndex"
+    enterKeyHint = "enterKeyHint"
+    onformdata = "onformdata"
+    onpointerrawupdate = "onpointerrawupdate"
+    namespaceURI = "namespaceURI"
+    prefix = "prefix"
+    localName = "localName"
+    tagName = "tagName"
+    id = "id"
+    className = "className"
+    classList = "classList"
+    slot = "slot"
+    part = "part"
+    attributes = "attributes"
+    shadowRoot = "shadowRoot"
+    assignedSlot = "assignedSlot"
+    innerHTML = "innerHTML"
+    outerHTML = "outerHTML"
+    scrollTop = "scrollTop"
+    scrollLeft = "scrollLeft"
+    scrollWidth = "scrollWidth"
+    scrollHeight = "scrollHeight"
+    clientTop = "clientTop"
+    clientLeft = "clientLeft"
+    clientWidth = "clientWidth"
+    clientHeight = "clientHeight"
+    attributeStyleMap = "attributeStyleMap"
+    onbeforecopy = "onbeforecopy"
+    onbeforecut = "onbeforecut"
+    onbeforepaste = "onbeforepaste"
+    onsearch = "onsearch"
+    elementTiming = "elementTiming"
+    previousElementSibling = "previousElementSibling"
+    nextElementSibling = "nextElementSibling"
+    children = "children"
+    firstElementChild = "firstElementChild"
+    lastElementChild = "lastElementChild"
+    childElementCount = "childElementCount"
+    onfullscreenchange = "onfullscreenchange"
+    onfullscreenerror = "onfullscreenerror"
+    onwebkitfullscreenchange = "onwebkitfullscreenchange"
+    onwebkitfullscreenerror = "onwebkitfullscreenerror"
+    nodeType = "nodeType"
+    nodeName = "nodeName"
+    baseURI = "baseURI"
+    isConnected = "isConnected"
+    ownerDocument = "ownerDocument"
+    parentNode = "parentNode"
+    parentElement = "parentElement"
+    childNodes = "childNodes"
+    firstChild = "firstChild"
+    lastChild = "lastChild"
+    previousSibling = "previousSibling"
+    nextSibling = "nextSibling"
+    nodeValue = "nodeValue"
+    textContent = "textContent"
+
 
 class Checks(Resource):
     """

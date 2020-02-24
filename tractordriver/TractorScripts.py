@@ -106,8 +106,9 @@ class TractorDriver(object):
             element.selector = value
         if auto_wait:
             if not isinstance(element, (list,)):
-                element.scroll_into_view()
                 element.wait_visible(timeout=timeout, error=True)
+                element.scroll_into_view()
+
         return element
 
     def find_elements(self, by=By.ID, value=None, auto_wait=True, timeout=20):
