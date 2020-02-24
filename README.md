@@ -1,8 +1,3 @@
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
 
 
 # About
@@ -11,12 +6,13 @@ TractorDriver is an end-to-end test framework for Angular and AngularJS applicat
 TractorDriver is built on top of Selenium WebDriver, which uses native events and browser-specific drivers. When you use TractorDriver You no longer need to add waits and sleeps to your test. so you don’t have to worry about waiting for your test and webpage to sync.
 
 TractorDriver is tested with Python 3.6 and 3.7 by using pytest.
-No need to download any webdriver and put it in some path. Tracktor driver and webdrivermanager will automatically do it.
 
 
 # Installation
 
 You can install TractorDriver by one single command. 
+
+
 `pip install tractordriver`
 
 or do it manually with downloading the repository and installing it by the following command:
