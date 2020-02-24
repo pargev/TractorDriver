@@ -13,8 +13,7 @@ from tractordriver.resource import Resource
 
 
 class Element(WebElement):
-    def __init__(self):
-        self.client_side_attributes = {}
+    client_side_attributes = {}
 
     def js_click(self):
         """
