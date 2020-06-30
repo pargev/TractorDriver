@@ -27,14 +27,14 @@ class Chrome(TractorDriver, webdriver.Chrome):
     def __init__(self, executable_path=None, port=0,
                  options=None, service_args=None,
                  desired_capabilities=None, service_log_path=None,
-                 chrome_options=None, version='latest'):
+                 chrome_options=None, version='latest', *args, **kwargs):
         if not executable_path:
             executable_path = ChromeDriverManager().download_and_install(version=version)[0]
             # os.environ["webdriver.chrome.driver"] = executable_path
         super(Chrome, self).__init__(executable_path=executable_path, port=port,
                                      options=options, service_args=service_args,
                                      desired_capabilities=desired_capabilities, service_log_path=service_log_path,
-                                     chrome_options=chrome_options)
+                                     chrome_options=chrome_options, *args, **kwargs)
 
 
 class Safari(TractorDriver, webdriver.Safari):
